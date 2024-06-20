@@ -2,8 +2,8 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 
 # Load data
-info_tourism = pd.read_csv(r"C:\Users\fabia\Documents\Tugas Bangkit\Capstone Deployment\ML_Repo\Datasets\tourism_with_id.csv")
-tourism_rating = pd.read_csv(r"C:\Users\fabia\Documents\Tugas Bangkit\Capstone Deployment\ML_Repo\Datasets\tourism_rating.csv")
+info_tourism = pd.read_csv("Datasets/tourism_with_id.csv")
+tourism_rating = pd.read_csv("Datasets/tourism_rating.csv")
 
 # Identify outliers and clip the "Price" column
 Q1 = info_tourism['Price'].quantile(0.25)
@@ -51,5 +51,5 @@ tourism_new = pd.DataFrame({
     "normalized_price": info_tourism['Normalized_Price'].tolist()
 })
 
-tourism_new.to_csv(r"C:\Users\fabia\Documents\Tugas Bangkit\Capstone Deployment\ML_Repo\Modified Datasets\tourism_new.csv", index=False)
-tourism_rating.to_csv(r"C:\Users\fabia\Documents\Tugas Bangkit\Capstone Deployment\ML_Repo\Modified Datasets\tourism_rating_modified.csv", index=False)
+tourism_new.to_csv("Datasets/Modified/tourism_new.csv", index=False)
+tourism_rating.to_csv("Datasets/Modified/tourism_rating_modified.csv", index=False)

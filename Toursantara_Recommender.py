@@ -6,8 +6,8 @@ from keras import layers
 import matplotlib.pyplot as plt
 
 # Load the preprocessed datasets
-df = pd.read_csv(r"C:\Users\fabia\Documents\Tugas Bangkit\Capstone Deployment\ML_Repo\Modified Datasets\tourism_rating_modified.csv")
-tourism_new = pd.read_csv(r"C:\Users\fabia\Documents\Tugas Bangkit\Capstone Deployment\ML_Repo\Modified Datasets\tourism_new.csv")
+df = pd.read_csv("Datasets/Modified/tourism_rating_modified.csv")
+tourism_new = pd.read_csv("Datasets/Modified/tourism_new.csv")
 
 # Extract unique user and place information
 user_ids = df['User_Id'].unique().tolist()
@@ -132,5 +132,5 @@ print('----' * 8)
 recommended_place = tourism_new[tourism_new['id'].isin(recommended_place_ids)]
 print(recommended_place[['name', 'category', 'city', 'description', 'price', 'lat', 'lng']])
 
-# Save the model
-# model.save(r"place_recommendation2.h5")
+# Uncomment the line below to save the model
+# model.save(r"place_recommendation.h5")
